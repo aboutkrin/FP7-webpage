@@ -1,20 +1,15 @@
-# FP7-webpage Title of Project
-This is a template for using your repo's README.md as your project web page. 
-I recommend you copy and paste into your README file. Delete this line and the one above it, customize everything else. Make it look good!
+
 
 ##Authors
-Person One
+Krin Yongvongphaiboon @aboutkrin
 
-Person Two
+Udit Bhansali @ubhansali 
 
 ##Overview
-A brief description of the project is given here.  The description is 1 to 3 sentences long.  Be concise and clear.
+In our earlier discussions, we began thinking about how we can get live stock prices from Dow Jones. To ensure this, we have designed a GUI interface that allows a user to enter ticker symbols and get current price of the stock.
 
 ##Screenshot
-(insert a screenshot here. You may opt to get rid of the title for it. You need at least one screenshot. Make it actually appear here, don't just add a link.)
-
-Here's a demonstration of how to display an image that's uploaded to this repo:
-![screenshot showing env diagram](withdraw.png)
+![alt tag](https://github.com/oplS16projects/Krin-Udit/blob/master/fred.jpg)
 
 ##Concepts Demonstrated
 Identify the OPL concepts demonstrated in your project. Be brief. A simple list and example is sufficient. 
@@ -23,28 +18,23 @@ Identify the OPL concepts demonstrated in your project. Be brief. A simple list 
 * **Symbolic language processing techniques** are used in the parser.
 
 ##External Technology and Libraries
-Briefly describe the existing technology you utilized, and how you used it. Provide a link to that technology(ies).
+[web-server/insta](https://docs.racket-lang.org/web-server/run.html)
+[jeeve/markets](https://planet.racket-lang.org/package-source/jeeve/markets.plt/1/2/planet-docs/manual/index.html)
 
 ##Favorite Scheme Expressions
-####Mark (a team member)
-Each team member should identify a favorite expression or procedure, written by them, and explain what it does. Why is it your favorite? What OPL philosophy does it embody?
-Remember code looks something like this:
+####Krin
+In Racket, I'm impressed how easy it was to create a webpage. The following code demonstrate how you can create a unique link for the webpage and be able to call a function. The function will be the body of the link itself.
 ```scheme
-(map (lambda (x) (foldr compose functions)) data)
+(define-values (start add-url)
+  (dispatch-rules
+   [("display-data") #:method "post"  display-data]
+   [else get-first]))
 ```
-####Lillian (another team member)
-This expression reads in a regular expression and elegantly matches it against a pre-existing hashmap....
-```scheme
-(let* ((expr (convert-to-regexp (read-line my-in-port)))
-             (matches (flatten
-                       (hash-map *words*
-                                 (lambda (key value)
-                                   (if (regexp-match expr key) key '()))))))
-  matches)
-```
+####Udit
 
-##Additional Remarks
-Anything else you want to say in your report. Can rename or remove this section.
+```scheme
+
+```
 
 #How to Download and Run
 You may want to link to your latest release for easy downloading by people (such as Mark).
