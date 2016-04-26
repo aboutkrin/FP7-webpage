@@ -27,8 +27,8 @@ In Racket, I'm impressed how easy it was to create a webpage. The following code
 ```scheme
 (define-values (start add-url)
   (dispatch-rules
-   [("display-data") #:method "post"  display-data]
-   [else get-first]))
+   (("display-data") #:method "post"  display-data)
+   (else get-first)))
 ```
 ####Udit
 
